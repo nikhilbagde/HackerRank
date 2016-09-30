@@ -18,6 +18,8 @@ public class DoublyLinkedList {
         list1.add(6);
         list1.add(7);
 
+        int[] array = new int[10];
+
         list1.printList();
         System.out.println("After Adding 5");
         list1.SortedInsert(list1.head , 8);

@@ -260,4 +260,20 @@ public class BinaryTree {
             return getLeafCount(node.left) + getLeafCount(node.right);
         }
     }
+    public int maxDepth(Node A) {
+        return depth(A, 0);
+    }
+
+    public int depth(Node node, int level) {
+
+        if (node == null)
+            return level;
+
+        int left = depth(node.left, level + 1);
+        int right = depth(node.right, level + 1);
+
+        return Math.max(left, right);
+
+    }
+
 }
