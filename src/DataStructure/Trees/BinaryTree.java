@@ -1,5 +1,6 @@
 package DataStructure.Trees;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -124,7 +125,7 @@ public class BinaryTree {
         /* printLevelorder(tree)
         1) Create an empty queue q
         2) temp_node = root //start from root
-        3) Loop while temp_node is not NULL
+        3) Loop while temp_node is not NULL, loop while queue is not empty.
 
         a) print temp_node->data.
         b) Enqueue temp_node’s children (first left then right children) to q
@@ -273,6 +274,43 @@ public class BinaryTree {
         int right = depth(node.right, level + 1);
 
         return Math.max(left, right);
+
+    }
+    public void FindLargestFromLevel(Node root){
+        Queue<Node> queue = new LinkedList<>();
+        ArrayList<Node> nodeList = new ArrayList<>();
+        queue.add(root);
+        int elementCounter = 0;
+        int levelCounter = 0;
+
+        while(!queue.isEmpty()){
+            Node temp = queue.poll();
+            nodeList.add(temp);
+
+            printLevelLargest(nodeList);
+
+            nodeList = null;
+
+            if(temp.left!=null){
+                queue.add(temp.left);
+                nodeList.add(temp.left);
+                elementCounter++;
+                levelCounter++;
+            }
+            if(temp.right!=null){
+                queue.add(temp.right);
+                elementCounter++;
+            }
+
+        }
+
+    }
+    public void printLevelLargest(ArrayList<Node> nodeList){
+
+    }
+
+    public static void printTree(Node node){
+        //a n = - 2^(-n) . (-16+2^n)
 
     }
 

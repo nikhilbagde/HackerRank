@@ -10,33 +10,37 @@ import java.util.Set;
 public class Nondivisiblesubset {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int K = sc.nextInt();
+        int distinctIntegers = sc.nextInt();
+        int divisor = sc.nextInt();
 
-        int[] a = new int[N];
-        Set<Integer> subSet = new HashSet<Integer>();
-        //int counter = 0;
-        if(N>=1 && N<= ((int) Math.pow(10,5)) && K>=1 && K<= 100){
-            for(int i=0;i<N;i++){
-                int temp = sc.nextInt();
-                if(temp <= Math.pow(10,9) && temp >= 1){
-                    a[i] = temp;
-                }
-            }
-            //Arrays.sort(a);
-            for(int i=0;i<N;i++){
-                for(int j=i; j<N;j++){
-                    if(i!=j && (a[i]+a[j])%K != 0){
-                        subSet.add(a[i]);
-                        subSet.add(a[j]);
-                        //counter++;
-                    }
-                }
-            }
-            System.out.println(subSet.size());
-            //System.out.println(counter);
+        int[] setInteger = new int[distinctIntegers];
+        for (int i = 0; i < distinctIntegers; i++) {
+            setInteger[i] = sc.nextInt();
         }
+        int maxSubSetCount = findSubsetOfNonEvenlyDivisible(setInteger, divisor);
+        System.out.println("Hence total of " + maxSubSetCount + " numbers from given set has addition which is not divisible by " + divisor);
+    }
+    public static int findSubsetOfNonEvenlyDivisible(int[] setIntegers, int divisor){
+        Set<Integer> setOfNonDivisibleInteger = new HashSet<>();
+        for (int i = 0; i < setIntegers.length -1 ; i++) {
+            //Since we dont want this element as a pair to already considered pair.
+            // i!=0 since we will be considering 1st element for first time.
+            if(!setOfNonDivisibleInteger.contains(setIntegers[i]) && i!=0 /*for first element*/) continue;
 
+            for (int j =  i + 1; j < setIntegers.length ; j++) {
+                //if one of alrleady cosidered element is not in set, then just skip it.
+                // since anyway we dont want it in final set, hence not to consider.
+                // j!=1 since this would be first time for all elements
+                // i!=0 because we need to consider first element with all element
+                // at start to fill Set for first time
+                if(!setOfNonDivisibleInteger.contains(setIntegers[j]) && j!=1 && i!=0 /*for first element and all other element*/) continue;
+                if((setIntegers[i] + setIntegers[j])% divisor != 0){
+                    setOfNonDivisibleInteger.add(setIntegers[i]);
+                    setOfNonDivisibleInteger.add(setIntegers[j]);
+                }
+            }
+        }
+        return setOfNonDivisibleInteger.size();
     }
 }
 

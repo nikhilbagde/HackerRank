@@ -23,7 +23,6 @@ public class Divisiblesumpairs {
                         counter++;
                     }
                 }
-
             }
             System.out.println(counter);
         }
