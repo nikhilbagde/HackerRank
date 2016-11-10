@@ -7,6 +7,7 @@ import java.util.Scanner;
  * 1. Quickest way to reverse a string
  * String a = abcd, String b = new StringBuilder(a).reverse().toString(); b= dcba;
  * Improve this solution by only using 1 String, and 2 loops 1 going forward and another backwards.
+ * https://www.hackerrank.com/challenges/funny-string
  */
 public class FunnyString {
     public static void main(String[] args) {
@@ -29,3 +30,5 @@ public class FunnyString {
         }
     }
 }
+
+// Not working yet
