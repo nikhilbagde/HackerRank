@@ -9,10 +9,18 @@ import java.util.Stack;
 public class MatchingParenthesis {
     public static void main(String[] args) {
         String stream = "{{}}{)([][]";
+        //if these are given with letters
+        String streamWithLetters = "(a+b * {a-b /[x+y]} + c-d)";
+        String onlyString = streamWithLetters.replaceAll("[A-z]","");       //not working
+        //separated A-Z and a-z since there is '(' and ')' character between 'Z' and 'a'
+        // ^ will escape everything after it, so +-*/ all math operators
+        String onlyString1 = streamWithLetters.replaceAll("[A-Za-z^+-/*]","");
+        String onlyString2 = onlyString1.replaceAll("\\s+","");
 
         //this would work without letter in given stream
         //meaning only brackets.
-        System.out.println(checkMatchingParenthesis(stream.toCharArray()));
+        System.out.println(checkMatchingParenthesis(stream.toCharArray()) ? "Balanced" : "Not Balanced");
+        System.out.println(checkMatchingParenthesis(onlyString2.toCharArray())? "Balanced" : "Not Balanced");
     }
     public static boolean checkMatchingParenthesis(char[] stream){
         Stack<Character> stack = new Stack<>();
