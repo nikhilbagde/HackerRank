@@ -18,6 +18,7 @@ public class Problem2 {
         String[] missingWordsArray = missingWords(s, t);
         for (String ss: missingWordsArray) {
             System.out.println(ss);
+
         }
     }
     public static String[] missingWords(String s, String t){

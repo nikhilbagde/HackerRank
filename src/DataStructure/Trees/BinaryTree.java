@@ -278,22 +278,22 @@ public class BinaryTree {
     }
     public void FindLargestFromLevel(Node root){
         Queue<Node> queue = new LinkedList<>();
-        ArrayList<Node> nodeList = new ArrayList<>();
+        //ArrayList<Node> nodeList = new ArrayList<>();
         queue.add(root);
         int elementCounter = 0;
         int levelCounter = 0;
 
         while(!queue.isEmpty()){
             Node temp = queue.poll();
-            nodeList.add(temp);
+            //nodeList.add(temp);
 
-            printLevelLargest(nodeList);
+            //printLevelLargest(nodeList);
 
-            nodeList = null;
+            //nodeList = null;
 
             if(temp.left!=null){
                 queue.add(temp.left);
-                nodeList.add(temp.left);
+                //nodeList.add(temp.left);
                 elementCounter++;
                 levelCounter++;
             }

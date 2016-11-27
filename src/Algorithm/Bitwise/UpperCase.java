@@ -18,15 +18,23 @@ public class UpperCase {
         char x = 'a';
         char y = 'B';
 
-        char z = toggleCase(x);
+        /*char z = toggleCase(x);
         char z1 = toggleCase(y);
+        */
+        char z = toggleCase2(x);
+        char z1 = toggleCase2(y);
+
         System.out.println(z);
         System.out.println(z1);
     }
-    public static char toggleCase(char x){
+    private static char toggleCase(char x){
         int y = 32;    // in bits = 00100000
         int x1  = (int) x;
         int  z =  x1 ^ y;
         return (char) z;
+    }
+
+    private static char toggleCase2(char x){
+        return (char ) ((int) x ^ 32);
     }
 }
