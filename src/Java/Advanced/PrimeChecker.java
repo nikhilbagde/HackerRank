@@ -82,4 +82,13 @@ class Prime{
         }
         return true;
     }
+    void checkPrimeNew(int... number ){
+        for (int i :number) {
+            isPrimeUsingBigInteger(i);
+        }
+    }
+    boolean isPrimeUsingBigInteger(int i){
+        return BigInteger.valueOf(i).isProbablePrime(1);
+    }
+
 }
