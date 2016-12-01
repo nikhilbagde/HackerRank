@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Created by Nikhi on 11/11/2016.
  */
-public class Problem1 {
+public class EvenLinkedList {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

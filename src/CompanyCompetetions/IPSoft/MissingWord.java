@@ -10,7 +10,7 @@ import java.util.Scanner;
  * How to convert list to Array -> list.toArray()
  * How to convert list to String of array -> list.toArray(new String[list.size])
  */
-public class Problem2 {
+public class MissingWord {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = "I am using HackerRank to improve prgramming I";

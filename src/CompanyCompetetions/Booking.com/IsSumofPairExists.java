@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by Nikhi on 11/23/2016.
  */
-public class Problem1 {
+public class IsSumofPairExists {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int sum = scanner.nextInt();

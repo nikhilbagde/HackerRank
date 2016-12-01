@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by Nikhi on 11/23/2016.
  */
-public class Problem2 {
+public class DifferenceBound {
     public static void main(String args[] ) throws Exception {
         Scanner sc=new Scanner(System.in);
         String s=sc.nextLine();
@@ -29,7 +29,7 @@ public class Problem2 {
                 out.add(x);
             }else{
                 int diff=x-prev;
-                if(diff<=-127 || diff>=127){
+                if(diff<-127 || diff>127){
                     out.add(-128);
                     out.add(diff);
                 }else{
