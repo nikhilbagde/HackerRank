@@ -42,7 +42,7 @@ public class SortHotelList2 {
         sortedHotelMapTry1.putAll(map);
         System.out.println("Try 1" + map);
 
-        //Try2 - works. Meaining creating class, and extending comparator is a must.
+        //Try2 - works. Meaning creating class, and extending comparator is a must.
         TreeMap<Integer,Integer> sortedHotelMapTry2 = new TreeMap<>(new ValueComparatorForMap(hotelToCustomerReviewMap));
         sortedHotelMapTry2.putAll(hotelToCustomerReviewMap);
         System.out.println("Try 2" + sortedHotelMapTry2);
