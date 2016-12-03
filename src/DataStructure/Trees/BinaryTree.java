@@ -1,9 +1,6 @@
 package DataStructure.Trees;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by Nikhil on 9/14/2016.
@@ -276,7 +273,7 @@ public class BinaryTree {
         return Math.max(left, right);
 
     }
-    public void FindLargestFromLevel(Node root){
+    public void FindLargestFromLevel(Node root, int givenLevel) throws IllegalArgumentException{
         Queue<Node> queue = new LinkedList<>();
         //ArrayList<Node> nodeList = new ArrayList<>();
         queue.add(root);
@@ -284,26 +281,31 @@ public class BinaryTree {
         int levelCounter = 0;
 
         while(!queue.isEmpty()){
+            List<Node> list = new ArrayList<>();
+            list.addAll(queue);
+
+            if(levelCounter == givenLevel){
+                //return list;
+            }
             Node temp = queue.poll();
             //nodeList.add(temp);
 
             //printLevelLargest(nodeList);
 
             //nodeList = null;
-
-            if(temp.left!=null){
-                queue.add(temp.left);
-                //nodeList.add(temp.left);
-                elementCounter++;
+            if(temp.left!=null || temp.right!=null) {
                 levelCounter++;
-            }
-            if(temp.right!=null){
-                queue.add(temp.right);
-                elementCounter++;
+                if (temp.left != null) {
+                    queue.add(temp.left);
+                }
+                if (temp.right != null) {
+                    queue.add(temp.right);
+
+                }
             }
 
         }
-
+        //return ;
     }
     public void printLevelLargest(ArrayList<Node> nodeList){
 
