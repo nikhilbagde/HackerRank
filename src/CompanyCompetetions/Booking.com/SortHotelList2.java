@@ -32,12 +32,9 @@ public class SortHotelList2 {
         HashMap<Integer,Integer> map  = new HashMap<>(hotelToCustomerReviewMap);
 
         //Doesn't Work!!!
-        TreeMap<Integer,Integer> sortedHotelMapTry1 = new TreeMap<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                //wow! :D
-                return map.get(o1)> map.get(o2) ? -1 : (map.get(o1)<map.get(o2) ? 1 : (o1>o2? 1:-1));
-            }
+        TreeMap<Integer,Integer> sortedHotelMapTry1 = new TreeMap<>((o1, o2) -> {
+            //wow! :D
+            return map.get(o1)> map.get(o2) ? -1 : (map.get(o1)<map.get(o2) ? 1 : (o1>o2? 1:-1));
         });
         sortedHotelMapTry1.putAll(map);
         System.out.println("Try 1" + map);
@@ -47,6 +44,24 @@ public class SortHotelList2 {
         sortedHotelMapTry2.putAll(hotelToCustomerReviewMap);
         System.out.println("Try 2" + sortedHotelMapTry2);
         //sortBySimilarWordCount(CustomerReviewMap, givenReviews);
+
+        //Try 3: New Method to sort
+        //Section 3:
+        //Comaprator things
+        /* This is for not MAp.
+        0)
+            ArtistCompare artistCompare = new ArtistCompare();
+            Collections.sort(songList, Collections.reverseOrder(artistCompare));
+        1)
+            Comparator<Song> songRatingComparator = Comparator.comparing(Song::getRating);
+            Collections.sort(songList, songRatingComparator.reversed());
+            And you can, of course, also use the Streams framework:
+
+        2)
+            List<Song> sortedSongList = songList.stream()
+                .sorted(Comparator.comparing(Song::getRating).reversed())
+                .collect(Collectors.toList());*/
+
 
     }
     private static void sortBySimilarWordCount(Map<Integer,String > hotelReviewMap, String[] words){

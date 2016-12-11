@@ -3,7 +3,7 @@ package CodeChef.DEC16;
 
 
 /**
- * Created by Nikhi on 12/3/2016.
+ * Created by NikhiL on 12/3/2016.
  * Sample Input:
  *  2
     8 4
@@ -24,7 +24,7 @@ public class RosesForAlexSubmitted {
                 int oneSetOfRoses = sc.nextInt();           //csae 1 : 4
 
                 //constrain checking
-                if(2<= totalRoses && totalRoses<= Math.pow(10,5) && 1<= oneSetOfRoses && oneSetOfRoses <= totalRoses && totalRoses%oneSetOfRoses == 0){
+                if(constrinaChecking(totalRoses, oneSetOfRoses)){
                     int[] rosesArray = new int[totalRoses];
                     java.util.HashMap<Integer, Integer> numberFrequency = new java.util.HashMap<>();
                     int minRose = 0;
@@ -100,10 +100,13 @@ public class RosesForAlexSubmitted {
         }
         return cutCount;
     }
+    private static boolean constrinaChecking(int totalRoses, int oneSetOfRoses ){
+        return 2<= totalRoses && totalRoses<= Math.pow(10,5) && 1<= oneSetOfRoses && oneSetOfRoses <= totalRoses && totalRoses%oneSetOfRoses == 0;
+    }
 }
 //Sorting of map values logic.
 class SortOnValues2 implements java.util.Comparator<Integer>{
-    java.util.SortedMap<Integer,Integer> sortedMap = new java.util.TreeMap<>();
+    private java.util.SortedMap<Integer,Integer> sortedMap = new java.util.TreeMap<>();
     SortOnValues2(java.util.HashMap<Integer,Integer> mapIn){
         sortedMap.putAll(mapIn);
     }
@@ -112,3 +115,7 @@ class SortOnValues2 implements java.util.Comparator<Integer>{
         return sortedMap.get(o1) > sortedMap.get(o2) ? -1 : 1;
     }
 }
+
+/*
+Test Cases: T =10
+ */
