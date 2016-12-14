@@ -1,4 +1,4 @@
-package DataStructure.MyDataStructures.StackAndQueue;
+package DataStructure.MyDataStructures.Stacks;
 
 /**
  * Created by Nikhi on 12/14/2016 2:23 AM.
