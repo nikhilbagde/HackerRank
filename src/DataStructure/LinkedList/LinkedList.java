@@ -4,7 +4,7 @@ import java.util.Hashtable;
 /**
  * Created by Nikhil on 8/14/2016.
  */
-public class LinkedList {
+public class LinkedList extends java.util.LinkedList {
     Node head;
 
     public static void main(String[] args) {

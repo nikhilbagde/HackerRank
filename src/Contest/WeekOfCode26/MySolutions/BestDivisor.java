@@ -1,4 +1,4 @@
-package Contest.WeekOfCode26;
+package Contest.WeekOfCode26.MySolutions;
 
 import java.math.BigInteger;
 import java.util.*;
