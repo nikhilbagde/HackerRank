@@ -5,15 +5,15 @@ import java.util.Arrays;
 /**
  * Created by Nikhi on 12/14/2016 2:26 AM.
  */
-public class ArrayStack<E> implements Stack<E> {
+public class MyArrayStack<E> implements MyStack<E> {
     private static final int CAPACITY = 1000;
     private E[] data;
     private int t;
 
-    ArrayStack(){
+    MyArrayStack(){
         this(CAPACITY);
     }
-    ArrayStack(int capacity){
+    MyArrayStack(int capacity){
         data = (E[]) new Object[capacity];
         t = -1;
     }
@@ -30,7 +30,7 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public void push(E e) {
-        if(size() == data.length) throw new IllegalStateException("Stack is Full");
+        if(size() == data.length) throw new IllegalStateException("MyStack is Full");
         data[++t] = e;
     }
 
@@ -59,24 +59,24 @@ public class ArrayStack<E> implements Stack<E> {
     public static boolean hasMatchingBrackets(String expression){
         final String opening = "{[(";
         final String closing = "}])";
-        Stack<Character> stack = new ArrayStack<>(expression.length());
+        MyStack<Character> myStack = new MyArrayStack<>(expression.length());
 
         for (char c : expression.toCharArray()) {
             if(opening.indexOf(c)!=-1){
-                stack.push(c);
+                myStack.push(c);
             }else if(closing.indexOf(c)!= -1){
-                if(stack.empty()){
+                if(myStack.empty()){
                     return false;
                 }
-                if (closing.indexOf(c)!= opening.indexOf(stack.pop())){
+                if (closing.indexOf(c)!= opening.indexOf(myStack.pop())){
                     return false;
                 }
             }
         }
-        return stack.empty();
+        return myStack.empty();
     }
     static boolean matchHTMLTags(String html){
-        Stack<String> stack = new ArrayStack<>();   //notice default length of 1000. (Drawback)
+        MyStack<String> myStack = new MyArrayStack<>();   //notice default length of 1000. (Drawback)
         int start = html.indexOf('<');              //get first index of '<' character if any
         while(start!=-1){
             int end = html.indexOf('>', start+1); //find '>' after '<'
@@ -85,22 +85,43 @@ public class ArrayStack<E> implements Stack<E> {
             String tagName = html.substring(start+1, end);      //e.g.body
 
             if(!tagName.startsWith("/")){           //meaning its a start Tag. Push
-                stack.push(tagName);
+                myStack.push(tagName);
             }else{  //meaning it is a end tag with /at start.
-                if(stack.empty()) return false;     //before me find match stack is empty. Not balanced.
+                if(myStack.empty()) return false;     //before me find match myStack is empty. Not balanced.
 
-                if(!tagName.substring(1).equals(stack.pop())){  //get tagName of end without '/' hence subString(1)
+                if(!tagName.substring(1).equals(myStack.pop())){  //get tagName of end without '/' hence subString(1)
                     return false;
                 }
             }
             start = html.indexOf('<', end+1);
         }
-        return stack.empty();
+        return myStack.empty();
     }
 
+    public static MyArrayStack transfer(MyArrayStack S, MyArrayStack T){
+        if(S.size()!= T.size()){
+            System.out.println("Cant Transfer: Different Size");
+        }
+        while(S.size()>0){
+            T.push(S.pop());
+        }
+        return T;
+
+    }
+
+    void removeAll(){
+        removeAll(this);
+    }
+    private static MyArrayStack removeAll(MyArrayStack stack){
+        if(stack.size() != 0){
+            stack.pop();
+            removeAll(stack);
+        }
+        return stack;
+    }
     @Override
     public String toString() {
-        return "ArrayStack{" +
+        return "MyArrayStack{" +
                 "data=" + Arrays.toString(data) +
                 ", t=" + t +
                 '}';

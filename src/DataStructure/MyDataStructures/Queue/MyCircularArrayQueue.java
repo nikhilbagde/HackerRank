@@ -4,20 +4,20 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 /**
- * Created by Nikhi on 12/14/2016 5:28 AM.
+ * Created by Nikhi on 12/14/2016 11:15 PM.
  */
-public class ArrayQueue<E> implements Queue<E> {
+public class MyCircularArrayQueue<E> implements MyQueue<E> {
     private E[] data;
     private int f;
     private int currentSize = 0;
     private int size;
     private static final int CAPACITY =1000;
 
-    public ArrayQueue() {
+    public MyCircularArrayQueue() {
         this(CAPACITY);
     }
 
-    public ArrayQueue(int sizein) {
+    public MyCircularArrayQueue(int sizein) {
         data = (E[]) new Object[sizein];
         this.f = 0;
         size = sizein;
@@ -37,7 +37,7 @@ public class ArrayQueue<E> implements Queue<E> {
      */
     @Override
     public void enqueue(E e) throws IllegalStateException{
-        if(currentSize == data.length) throw new IllegalStateException("Stack is Full");
+        if(currentSize == data.length) throw new IllegalStateException("MyStack is Full");
         int nextIndex = (f + currentSize) % data.length;     //to keep bound index under size of array, (Circular Array)
         data[nextIndex]= e;
         currentSize++;
@@ -104,7 +104,7 @@ public class ArrayQueue<E> implements Queue<E> {
 
     @Override
     public String toString() {
-        return "ArrayQueue{" +
+        return "MyCircularArrayQueue{" +
                 "data=" + Arrays.toString(data) +
                 ", f=" + f +
                 ", currentSize=" + currentSize +

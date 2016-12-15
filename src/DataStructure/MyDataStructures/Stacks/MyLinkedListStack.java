@@ -3,8 +3,8 @@ package DataStructure.MyDataStructures.Stacks;
 /**
  * Created by Nikhi on 12/14/2016 2:50 AM.
  */
-public class LinkedListStack<E> implements Stack<E> {
-    private java.util.LinkedList<E> linkedList = new java.util.LinkedList<E>();
+public class MyLinkedListStack<E> implements MyStack<E> {
+    private java.util.LinkedList<E> linkedList = new java.util.LinkedList<>();
     @Override
     public void push(E e) {
         linkedList.addFirst(e);                             //Always add at the head. IN queue we used list.addLast().
@@ -35,24 +35,24 @@ public class LinkedListStack<E> implements Stack<E> {
     static boolean hasMatchingBrackets(String expression){
         final String opening = "{[(";
         final String closing = "}])";
-        Stack<Character> stack = new LinkedListStack<>();
+        MyStack<Character> myStack = new MyLinkedListStack<>();
 
         for (char c : expression.toCharArray()) {
             if(opening.indexOf(c)!=-1){
-                stack.push(c);
+                myStack.push(c);
             }else if(closing.indexOf(c)!= -1){
-                if(stack.empty()){
+                if(myStack.empty()){
                     return false;
                 }
-                if (closing.indexOf(c)!= opening.indexOf(stack.pop())){
+                if (closing.indexOf(c)!= opening.indexOf(myStack.pop())){
                     return false;
                 }
             }
         }
-        return stack.empty();
+        return myStack.empty();
     }
     static boolean matchHTMLTags(String html){
-        Stack<String> stack = new LinkedListStack<>();
+        MyStack<String> myStack = new MyLinkedListStack<>();
         int start = html.indexOf('<');              //get first index of '<' character if any
         while(start!=-1){
             int end = html.indexOf('>', start+1); //find '>' after '<'
@@ -61,22 +61,22 @@ public class LinkedListStack<E> implements Stack<E> {
             String tagName = html.substring(start+1, end);      //e.g.body
 
             if(!tagName.startsWith("/")){           //meaning its a start Tag. Push
-                stack.push(tagName);
+                myStack.push(tagName);
             }else{  //meaning it is a end tag with /at start.
-                if(stack.empty()) return false;     //before me find match stack is empty. Not balanced.
+                if(myStack.empty()) return false;     //before me find match myStack is empty. Not balanced.
 
-                if(!tagName.substring(1).equals(stack.pop())){  //get tagName of end without '/' hence subString(1)
+                if(!tagName.substring(1).equals(myStack.pop())){  //get tagName of end without '/' hence subString(1)
                     return false;
                 }
             }
             start = html.indexOf('<', end+1);
         }
-        return stack.empty();
+        return myStack.empty();
     }
 
     @Override
     public String toString() {
-        return "LinkedListStack{" +
+        return "MyLinkedListStack{" +
                 "linkedList=" + linkedList +
                 '}';
     }

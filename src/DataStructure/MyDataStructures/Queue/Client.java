@@ -5,7 +5,7 @@ package DataStructure.MyDataStructures.Queue;
  */
 public class Client {
     public static void main(String[] args) {
-        ArrayQueue<Integer> queue = new ArrayQueue<>(10);
+        MyArrayQueue<Integer> queue = new MyArrayQueue<>(10);
         queue.add(1);
         queue.add(2);
         queue.add(3);

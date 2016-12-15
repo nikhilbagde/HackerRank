@@ -4,15 +4,15 @@ import java.util.Hashtable;
 /**
  * Created by Nikhil on 8/14/2016.
  */
-public class LinkedList extends java.util.LinkedList {
-    Node head;
+public class MyLinkedList extends java.util.LinkedList {
+    private Node head;
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        MyLinkedList list = new MyLinkedList();
         list.add(1);         list.add(2);         list.add(3);         list.add(4);         list.add(5);
         list.add(6);         list.add(7);
 
-        LinkedList list2 = new LinkedList();
+        MyLinkedList list2 = new MyLinkedList();
         list2.add(1);         list2.add(2);        list2.add(3);         list2.add(4);         list2.add(5);
         list2.add(6);         list2.add(7);
 
@@ -34,14 +34,14 @@ public class LinkedList extends java.util.LinkedList {
 
 
         System.out.println("Merging Two Lists");
-        LinkedList mergedList = new LinkedList();
+        MyLinkedList mergedList = new MyLinkedList();
         mergedList.head = list.mergeLists(list.head, list2.head);
         mergedList.printList();
 
-        LinkedList list3 = new LinkedList();
+        MyLinkedList list3 = new MyLinkedList();
         list3.add(1);         list3.add(2);         list3.add(3);         list3.add(4);         list3.add(5);         list3.add(6);
         list3.add(6);
-        System.out.println("Testing LinkedList for Cycle");
+        System.out.println("Testing MyLinkedList for Cycle");
 
         if(list3.hasCycle(list3.head)){
             System.out.println("No Cycle");
@@ -51,9 +51,9 @@ public class LinkedList extends java.util.LinkedList {
 
 
         /*Two linked list with merged node, find that node */
-        LinkedList list4 = new LinkedList();
+        MyLinkedList list4 = new MyLinkedList();
         list4.add(1); list4.add(2); list4.add(3); list4.add(4);
-        LinkedList list5 = new LinkedList();
+        MyLinkedList list5 = new MyLinkedList();
         list5.add(1); list5.head.next = list4.head.next.next;
 
         System.out.println("Finding Merge Node");
@@ -130,7 +130,7 @@ public class LinkedList extends java.util.LinkedList {
         }
         return temp;
     }
-    public void reverse(LinkedList list){
+    public void reverse(MyLinkedList list){
 
         if(list.head == null){
             return;

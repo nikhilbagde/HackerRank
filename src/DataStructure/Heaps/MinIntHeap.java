@@ -1,6 +1,8 @@
 package DataStructure.Heaps;
 
+import javax.swing.text.html.HTMLDocument;
 import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  * Created by Nikhi on 12/8/2016 4:57 AM.
@@ -35,40 +37,42 @@ public class MinIntHeap {
         heapifyDown();
         return root;
     }
+    private void heapifyDown(){
+        int index = 0;
+        //check left child is smaller than current index
+        //if yes then check with right child
+        while(hasLeftChild(index)){         //index*2+1 < size Once we reach last node we don't have to check for any further. Hence condition < size()
+            //at one level down -> get Left child and Right Child and see which is smaller
+            //which is smaller left or right ?
+            int smallerChildIndex = getLeftChildIndex(index);
+
+            //if right exists and its less than left
+            if(hasRightChild(index) && rightChild(index) < leftChild(index)){
+                smallerChildIndex = getRightChildIndex(index);
+            }
+            //compare current with smallest from left or right then swap index
+            if(items[index] > items[smallerChildIndex]){
+                swap(index, smallerChildIndex);
+            } else {
+                break;
+            }
+            //update index for while loop. MOVE DOWN. L or R
+            index = smallerChildIndex;
+        }
+
+    }
     public void add(int item){
         ensureCapacity();
         items[size] = item;
         size++;
         heapifyUp();
     }
-    private void heapifyDown(){
-        int index = 0;
-        //check left child is smaller than current index
-        //if yes then check with right child
-        while(hasLeftChild(index)){
-            //at one level down -> get Left child and Right Child and see which is smaller
-            //which is smaller left or right ?
-            int smallerChildIndex = getLeftChildIndex(index);
-            if(hasRightChild(index) && rightChild(index) < leftChild(index)){
-                smallerChildIndex = getRightChildIndex(index);
-            }
-            //now check current item with smaller amount right and left and then swap
-            if(items[index] > items[smallerChildIndex]){
-                swap(index, smallerChildIndex);
-            } else {
-                break;
-            }
-            //update index for while loop.
-            index = smallerChildIndex;
-        }
-
-    }
     private void heapifyUp(){
         //get Last element
         // As long as there is a parent item present && parent is greater than me.
         //get its parent element and check of its smaller than parent
         //if yes then swap.
-        int index = size -1;
+        int index = size - 1;
         while(hasParent(index) && parent(index) > items[index]){
             swap(getParentIndex(index), index);
             //update index
@@ -87,4 +91,5 @@ public class MinIntHeap {
     private int leftChild(int index){ return items[getLeftChildIndex(index)];}
     private int rightChild(int index){ return items[getRightChildIndex(index)];}
     private int parent(int index){ return items[getParentIndex(index)];}
+
 }

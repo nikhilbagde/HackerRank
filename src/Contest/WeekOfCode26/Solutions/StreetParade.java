@@ -921,7 +921,7 @@ public class StreetParade {
          */
         public Item peek() {
             if (isEmpty())
-                throw new NoSuchElementException("Queue underflow");
+                throw new NoSuchElementException("MyQueue underflow");
             return first.item;
         }
 
@@ -950,7 +950,7 @@ public class StreetParade {
          */
         public Item dequeue() {
             if (isEmpty())
-                throw new NoSuchElementException("Queue underflow");
+                throw new NoSuchElementException("MyQueue underflow");
             Item item = first.item;
             first = first.next;
             n--;

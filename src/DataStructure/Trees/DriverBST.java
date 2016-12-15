@@ -58,18 +58,40 @@ public class DriverBST {
         //Print leaf count test
         System.out.println("Leaf count of tree is = " + tree.leafCount());
 
-        String name[] = new String[100];
+  /*      String name[] = new String[100];
         name[0] = "Nikhil YOu have been selected";
 
         System.out.println(name[0]);
-
-
+*/
+/*
         char name1[] = new char[100];
         String message = "NIKHIL YOU HAVE BEEN SELECTED!";
-        System.out.println(message);
+        System.out.println(message);*/
+
+        //Test levelwise printing of nodes with calculating max 3 elemenet at given level.
+        BinaryTree binaryTree = new BinaryTree(50);
+        binaryTree.insert(17);
+        binaryTree.insert(76);
+        binaryTree.insert(9);
+        binaryTree.insert(23);
+        binaryTree.insert(54);
+        binaryTree.insert(78);
+        binaryTree.insert(14);
+        binaryTree.insert(19);
+        binaryTree.insert(12);
+        binaryTree.insert(72);
+        binaryTree.insert(67);
+        binaryTree.preOrder(binaryTree.getRoot());
+
+        binaryTree.printLevelLargest(binaryTree.getRoot(), 3, 2);
+
+
+
     }
     public static void newLine(){
         System.out.println();
     }
+
+
 
 }

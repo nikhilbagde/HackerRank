@@ -1,6 +1,9 @@
 package DataStructure.Trees;
 
+import DataStructure.MyDataStructures.Queue.*;
+
 import java.util.*;
+import java.util.Queue;
 
 /**
  * Created by Nikhil on 9/14/2016.
@@ -307,13 +310,71 @@ public class BinaryTree {
         }
         //return ;
     }
-    public void printLevelLargest(ArrayList<Node> nodeList){
+    public void printLevelLargest(Node root, int level, int maxCount){
+        Queue<Node> queue = new LinkedList<>();
+        Queue<Integer> levelNodes = new LinkedList<>();
 
+        PriorityQueue<Node> minHeap = new PriorityQueue<>((o1, o2) ->
+                o1.data > o2.data ? 1 : (o1.data < o2.data ? -1 : 0)
+        );
+        //Pathetic logic
+        minHeap.add(root);
+        minHeap.add(root.left == null ? new Node(-1): root.left);
+        minHeap.add(root.right == null ? new Node(-2) : root.right ) ;
+
+        queue.add(root);
+        levelNodes.add(1);
+
+
+        while(!queue.isEmpty()){
+            Node temp = queue.poll();
+            int currentLevel = levelNodes.poll();
+
+            if(currentLevel == level){
+                //System.out.println(temp.data);
+                //if(sizeofMinHeap++ != 2){
+                 //   minHeap.add(temp);
+                //}
+                if(temp.data > minHeap.peek().data){
+                    minHeap.poll();
+                    minHeap.add(temp);
+                }
+            }
+            if(temp.left!=null || temp.right!=null){
+                if(temp.left!=null){
+                    queue.add(temp.left);
+                    levelNodes.add(currentLevel + 1);
+                }
+                if(temp.right!=null){
+                    queue.add(temp.right);
+                    levelNodes.add(currentLevel + 1);
+                }
+            }
+        }
+        printHeap(minHeap, maxCount);
     }
 
     public static void printTree(Node node){
         //a n = - 2^(-n) . (-16+2^n)
 
     }
+    static void printHeap(PriorityQueue<Node> heap){
+        System.out.println("\nPrinting Heap:");
+        while(!heap.isEmpty()){
+            System.out.print(heap.poll().data+ " ");
+        }
+    }
+    static void printHeap(PriorityQueue<Node> heap, int maxCount){
+        System.out.println("\nPrinting Heap:");
+        while(!heap.isEmpty() && maxCount-- >0){
+            System.out.print(heap.poll().data+ " ");
+        }
+    }
 
+    @Override
+    public String toString() {
+        return "BinaryTree{" +
+                "root=" + root +
+                '}';
+    }
 }

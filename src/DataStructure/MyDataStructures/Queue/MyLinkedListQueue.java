@@ -1,13 +1,11 @@
 package DataStructure.MyDataStructures.Queue;
 
-import DataStructure.LinkedList.LinkedList;
-
 /**
  * Created by Nikhi on 12/14/2016 6:40 AM.
  */
-public class LinkedListQueue<E> implements Queue<E> {
+public class MyLinkedListQueue<E> implements MyQueue<E> {
     private java.util.LinkedList<E> linkedList;
-    LinkedListQueue(){
+    MyLinkedListQueue(){
         linkedList = new java.util.LinkedList<E>();
     }
 
