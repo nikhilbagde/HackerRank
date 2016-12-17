@@ -1,12 +1,14 @@
 package Contest.WorldCodeSprint8.Solution;
 
-import jdk.nashorn.internal.runtime.OptimisticReturnFilters;
-
-import java.lang.reflect.Array;
-import java.lang.reflect.MalformedParameterizedTypeException;
 import java.util.*;
 
 /**
+ * 1. Binary Search = Notice value of min = mid + ((max-min)<<1);
+ *      and while loop should run if(min<=max)
+ * 2. Pass initial max value as 1 minus total size of an array.
+ * 3. Remember to check for values which are not in array case. return -1 and handle that case.
+ * 4. I learnt from this problem to consider edge cases, and how handle long input, binary search is efficient solution.
+ * 5. Still lack in speed. (First write down the algorithm by solving example) Then start writing code fast.
  * Created by Nikhi on 12/17/2016 12:21 PM.
  */
 public class Problem2_ClimingTheLeaderBoard {
