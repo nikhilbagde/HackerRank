@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by Nikhi on 12/17/2016 12:10 PM.
  */
-public class Problem1_SnakeCase {
+public class P1_SnakeCase {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.next();

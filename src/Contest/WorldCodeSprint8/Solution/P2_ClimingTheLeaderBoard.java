@@ -11,7 +11,7 @@ import java.util.*;
  * 5. Still lack in speed. (First write down the algorithm by solving example) Then start writing code fast.
  * Created by Nikhi on 12/17/2016 12:21 PM.
  */
-public class Problem2_ClimingTheLeaderBoard {
+public class P2_ClimingTheLeaderBoard {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
