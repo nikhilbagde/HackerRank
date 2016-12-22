@@ -13,7 +13,7 @@ public class Problem1 {
         String [] a = {"3 9"};
         getMinimumUniqueSum(a);
     }
-    static int[] getMinimumUniqueSum(String[] arr) {
+    private static int[] getMinimumUniqueSum(String[] arr) {
         int[] ret = new int[arr.length];
         for ( String pair: arr ) {
             //3 9
