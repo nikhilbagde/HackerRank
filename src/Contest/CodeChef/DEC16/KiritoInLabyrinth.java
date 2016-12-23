@@ -1,4 +1,4 @@
-package CodeChef.DEC16;
+package Contest.CodeChef.DEC16;
 
 /**
  * Created by Nikhi on 12/2/2016.

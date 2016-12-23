@@ -11,8 +11,5 @@ public class Problem4 {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
         Stack<Integer> stack = new Stack<>();
-
-
-
     }
 }

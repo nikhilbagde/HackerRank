@@ -1,4 +1,4 @@
-package CodeChef.DEC16;
+package Contest.CodeChef.DEC16;
 
 
 import java.io.IOException;
