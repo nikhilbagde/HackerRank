@@ -1,7 +1,5 @@
 package DataStructure.Heaps;
 
-import java.util.PriorityQueue;
-
 /**
  * Created by Nikhi on 12/8/2016 7:16 PM.
  */

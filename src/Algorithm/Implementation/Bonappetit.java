@@ -1,6 +1,8 @@
 package Algorithm.Implementation;
 
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * Created by Nikhi on 9/25/2016.
@@ -32,8 +34,6 @@ public class Bonappetit {
                 System.out.println("Bon Appetit");
             }
         }
-
-
     }
 }
 
