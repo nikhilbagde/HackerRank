@@ -71,7 +71,7 @@ public abstract class MyAbstractMap <K,V> implements MyMap<K,V> {
             return entries.hasNext();       //just call original hasNext of Iterator class from java.util
         }
         public K next(){
-            return entries.next().getKey();     //notice it returns key
+            return entries.next().getKey();     //notice it returns key as we are iterating over keys.
         }
         public void remove(){
             throw new UnsupportedOperationException();      //while iterating over keys, we don't support remove operating
@@ -99,7 +99,7 @@ public abstract class MyAbstractMap <K,V> implements MyMap<K,V> {
             return entries.hasNext();       //just call original hasNext of Iterator class from java.util
         }
         public V next(){
-            return entries.next().getValue();     //notice it returns key
+            return entries.next().getValue();     //notice it returns value as we are iterating over values.
         }
         public void remove(){
             throw new UnsupportedOperationException();      //while iterating over values, we don't support remove operating
