@@ -1,4 +1,4 @@
-package DataStructure.MyDataStructures.PriorityQueues;
+package DataStructure.MyDataStructures.PriorityQueues.Interfaces;
 
 /**
  * Created by Nikhi on 12/22/2016 4:18 PM.

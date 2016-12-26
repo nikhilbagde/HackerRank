@@ -1,4 +1,4 @@
-package DataStructure.MyDataStructures.Tree;
+package DataStructure.MyDataStructures.Tree.Interfaces;
 
 import DataStructure.MyDataStructures.PositionalLists.Position;
 

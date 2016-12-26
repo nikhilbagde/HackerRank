@@ -1,4 +1,4 @@
-package DataStructure.MyDataStructures.PriorityQueues;
+package DataStructure.MyDataStructures.PriorityQueues.Concrete;
 
 import java.util.Comparator;
 

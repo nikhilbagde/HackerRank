@@ -1,7 +1,6 @@
-package DataStructure.MyDataStructures.Tree;
+package DataStructure.MyDataStructures.Tree.Concrete;
 
 import DataStructure.MyDataStructures.PositionalLists.Position;
-import DataStructure.Trees.Node;
 
 /**
  * Created by Nikhi on 12/16/2016 9:34 AM.

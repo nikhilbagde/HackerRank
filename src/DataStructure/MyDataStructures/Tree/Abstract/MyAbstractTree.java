@@ -1,12 +1,13 @@
-package DataStructure.MyDataStructures.Tree;
+package DataStructure.MyDataStructures.Tree.Abstract;
 
 import DataStructure.MyDataStructures.PositionalLists.Position;
+import DataStructure.MyDataStructures.Tree.Interfaces.MyTree;
 
 
 /** Notice this is abstract Tree class which implements trivial methods from Tree interface.
  * Created by Nikhi on 12/16/2016 3:47 AM.
  */
-public abstract class MyAbstractTree<E> implements MyTree<E>{
+public abstract class MyAbstractTree<E> implements MyTree<E> {
 
     //Trivial methods are implemented here.
     //To implement methods here in abstract class PUBLIC keyword is must.

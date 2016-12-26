@@ -1,6 +1,9 @@
-package DataStructure.MyDataStructures.PriorityQueues;
+package DataStructure.MyDataStructures.PriorityQueues.Abstract;
 
-import java.security.spec.ECField;
+import DataStructure.MyDataStructures.PriorityQueues.Concrete.DefaultComparator;
+import DataStructure.MyDataStructures.PriorityQueues.Interfaces.MyEntry;
+import DataStructure.MyDataStructures.PriorityQueues.Interfaces.MyPriorityQueue;
+
 import java.util.Comparator;
 
 /** This includes a nested
@@ -10,10 +13,10 @@ import java.util.Comparator;
     method, compare, that invokes the comparator on the keys of two given entries
  * Created by Nikhi on 12/22/2016 4:36 PM.
  */
-public abstract class MyAbstractPriorityQueue <K,V> implements MyPriorityQueue <K,V>{
+public abstract class MyAbstractPriorityQueue <K,V> implements MyPriorityQueue<K,V> {
 
     //Nested class. TWO ELEMENT OBJECT CLASS.
-    protected static class PQEntry<K, V> implements MyEntry<K,V>{
+    protected static class PQEntry<K, V> implements MyEntry<K,V> {
         private K k;    //key
         private V v;    //value
 

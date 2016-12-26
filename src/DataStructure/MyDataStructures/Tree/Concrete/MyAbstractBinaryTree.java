@@ -1,14 +1,15 @@
-package DataStructure.MyDataStructures.Tree;
+package DataStructure.MyDataStructures.Tree.Concrete;
 
 import DataStructure.MyDataStructures.PositionalLists.Position;
-import ProjectEuler.EvenFibonnaci;
+import DataStructure.MyDataStructures.Tree.Abstract.MyAbstractTree;
+import DataStructure.MyDataStructures.Tree.Interfaces.MyBinaryTree;
 
 import java.util.Iterator;
 
 /**
  * Created by Nikhi on 12/16/2016 4:34 AM.
  */
-public class MyAbstractBinaryTree <E> extends MyAbstractTree <E> implements MyBinaryTree<E> {
+public class MyAbstractBinaryTree <E> extends MyAbstractTree<E> implements MyBinaryTree<E> {
     @Override
     public Position<E> root() {
         return null;

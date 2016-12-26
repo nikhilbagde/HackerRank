@@ -1,8 +1,6 @@
-package DataStructure.MyDataStructures.Tree;
+package DataStructure.MyDataStructures.Tree.Interfaces;
 
 import DataStructure.MyDataStructures.PositionalLists.Position;
-
-import java.util.TreeMap;
 
 /**
  * Created by Nikhi on 12/16/2016 4:33 AM.
