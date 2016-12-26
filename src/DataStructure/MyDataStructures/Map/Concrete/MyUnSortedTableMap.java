@@ -1,7 +1,7 @@
-package DataStructure.MyDataStructures.Map;
+package DataStructure.MyDataStructures.Map.Concrete;
 
-import Algorithm.Implementation.Kangaroo;
-import DataStructure.MyDataStructures.MyIterator.MyArrayList;
+import DataStructure.MyDataStructures.Map.Abstract.MyAbstractMap;
+import DataStructure.MyDataStructures.Map.Iterfaces.MyEntry;
 
 import java.util.ArrayList;
 import java.util.Iterator;

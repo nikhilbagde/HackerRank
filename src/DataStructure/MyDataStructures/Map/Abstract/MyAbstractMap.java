@@ -1,4 +1,7 @@
-package DataStructure.MyDataStructures.Map;
+package DataStructure.MyDataStructures.Map.Abstract;
+
+import DataStructure.MyDataStructures.Map.Iterfaces.MyEntry;
+import DataStructure.MyDataStructures.Map.Iterfaces.MyMap;
 
 import java.util.Iterator;
 
@@ -20,11 +23,11 @@ public abstract class MyAbstractMap <K,V> implements MyMap<K,V> {
     }
 
     //Map has a MapEntry which implements Entry
-    protected static class MyMapEntry<K,V> implements MyEntry<K,V>{
+    protected static class MyMapEntry<K,V> implements MyEntry<K,V> {
         private K k;
         private V v;
 
-        MyMapEntry(K key, V value){
+        public MyMapEntry(K key, V value){
             k = key;
             v =  value;
         }
