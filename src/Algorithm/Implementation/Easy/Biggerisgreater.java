@@ -1,4 +1,4 @@
-package Algorithm.Implementation;
+package Algorithm.Implementation.Easy;
 
 import java.io.BufferedReader;
 import java.io.IOException;

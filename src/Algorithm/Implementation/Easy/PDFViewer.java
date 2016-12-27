@@ -1,4 +1,4 @@
-package Algorithm.Implementation;
+package Algorithm.Implementation.Easy;
 
 /**
  * Created by Nikhi on 12/8/2016 1:31 AM.

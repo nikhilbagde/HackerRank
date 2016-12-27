@@ -1,4 +1,4 @@
-package Algorithm.Implementation;
+package Algorithm.Implementation.Easy;
 
 import java.util.HashSet;
 import java.util.Scanner;

@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Created by Nikhi on 12/26/2016 2:38 PM.
+ * Created by Nikhil on 12/26/2016 2:38 PM 2:07 PM.
  */
 public class MyUnSortedTableMap<K, V> extends MyAbstractMap<K, V> {
 
@@ -56,7 +56,7 @@ public class MyUnSortedTableMap<K, V> extends MyAbstractMap<K, V> {
     @Override
     public V put(K key, V value) {
         int index = findIndex(key);
-        if (index == -1) {        //key is not present good!
+        if (index == -1) {        //key is not present good! So add new entry.
             table.add(new MyMapEntry<K, V>(key, value));       //add new object from protected class from abstract.
         }
         return table.get(index).setValue(value);    //key already exists return new value with/after setting.
