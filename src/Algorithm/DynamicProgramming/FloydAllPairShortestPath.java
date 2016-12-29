@@ -14,7 +14,7 @@ public class FloydAllPairShortestPath {
         removeCycles();
         floydAlgorithm();
         printShortestPathSpecific();
-        allShortestPath();
+        printAllPairShortestPath();
     }
     private static int welcomeMessage(){
         System.out.println("All Pair Shortest Path: Floyd Algorithm");
@@ -118,7 +118,7 @@ public class FloydAllPairShortestPath {
         }
         //return 0;
     }
-    private static void allShortestPath(){
+    private static void printAllPairShortestPath(){
         System.out.println("\n\tAll Pair Shortest Paths");
         for (int start = 1; start < path.length; start++) {
             for (int end = 1; end < path.length; end++) {
