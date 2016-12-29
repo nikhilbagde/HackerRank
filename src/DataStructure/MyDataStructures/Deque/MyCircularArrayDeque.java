@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.EmptyStackException;
 
 /**
- * Created by Nikhi on 12/14/2016 11:18 PM.
+ * Created by Nikhil on 12/14/2016 11:18 PM.
  */
 public class MyCircularArrayDeque<E> implements MyDeque<E> {
     private static final int CAPACITY =1000;
@@ -24,7 +24,7 @@ public class MyCircularArrayDeque<E> implements MyDeque<E> {
 
     /**
      * Read ArrayDeque
-     * @param e
+     * @param
      */
 
 
@@ -53,7 +53,7 @@ public class MyCircularArrayDeque<E> implements MyDeque<E> {
     /**
      * Case when front  = 0, front-1 % size would yield -1%10 = -1,
      * To cover this, add total size, (front-1)+ N % N = -1+10=9%10=9
-     * @return
+     * @return E
      */
     @Override
     public E removeFirst() {
@@ -69,7 +69,7 @@ public class MyCircularArrayDeque<E> implements MyDeque<E> {
 
     /**
      * When rear = 9, rear+1%N = 10%10= 0
-     * @return
+     * @return E
      */
     @Override
     public E removeLast() {
