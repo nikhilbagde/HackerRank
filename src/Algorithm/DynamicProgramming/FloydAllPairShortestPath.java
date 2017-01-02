@@ -26,11 +26,11 @@ public class FloydAllPairShortestPath {
         distance = new int[totalVertex+1][totalVertex+1];
         for (int row = 1; row <= totalVertex; row++){
             for (int col = 1; col <= totalVertex; col++) {
-                if(row!= col) { //O for negative edges.
+                if(row!= col) {
                     System.out.println("Distance between vertex " + row + " to vertex " + col );
                     int weight = scanner.nextInt();
                     //distance[row][col] = weight <0 ? 0 : (weight == 999 ? Integer.MAX_VALUE : weight);
-                    distance[row][col] = weight <0 ? 0 : weight;
+                    distance[row][col] = weight <0 ? 0 : weight; //O for negative edges.
                 } else {
                     distance[row][col] = 0;
                 }
