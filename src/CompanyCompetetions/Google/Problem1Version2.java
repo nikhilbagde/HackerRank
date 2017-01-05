@@ -3,7 +3,7 @@ package CompanyCompetetions.Google;
 /**
  * Created by Nikhi on 12/24/2016 12:56 PM.
  */
-public class Problem2 {
+public class Problem1Version2 {
     public static void main(String[] args) {
         int x= 623315;
         solution(x);

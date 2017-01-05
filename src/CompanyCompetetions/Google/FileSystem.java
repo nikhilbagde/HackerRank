@@ -14,35 +14,35 @@ public class FileSystem {
             this.noOfSpaces = noOfSpacesIn;
         }
     }
-    private java.util.Stack<Files> files = new java.util.Stack<>();
+    private java.util.Stack<Files> filesStack = new java.util.Stack<>();
     public int solution(String S) {
         int sum = -1;
         String[] hierarchy = S.split("\n");
         int noOfSpaces = getNumberOfSpaces(hierarchy[0]); //hierarchy[0].length() - hierarchy[0].trim().length();
         Files file = new Files(hierarchy[0], hierarchy[0].trim().length() + 1, noOfSpaces);
-        files.push(file);
+        filesStack.push(file);
 
         for(int i = 1; i < hierarchy.length; i++) {
             //push
             if(noOfSpaces < getNumberOfSpaces(hierarchy[i])) {
                 noOfSpaces = getNumberOfSpaces(hierarchy[i]);
-                files.push(new Files(hierarchy[i], files.peek().length + hierarchy[i].trim().length() + 1, noOfSpaces));
+                filesStack.push(new Files(hierarchy[i], filesStack.peek().length + hierarchy[i].trim().length() + 1, noOfSpaces));
             } else {
-                while(!files.isEmpty() && files.peek().noOfSpaces >= getNumberOfSpaces(hierarchy[i])) {
-                    files.pop();
+                while(!filesStack.isEmpty() && filesStack.peek().noOfSpaces >= getNumberOfSpaces(hierarchy[i])) {
+                    filesStack.pop();
                 }
                 noOfSpaces = getNumberOfSpaces(hierarchy[i]);
-                if(files.empty())
-                    files.push(new Files(hierarchy[i], hierarchy[i].trim().length() + 1, noOfSpaces));
+                if(filesStack.empty())
+                    filesStack.push(new Files(hierarchy[i], hierarchy[i].trim().length() + 1, noOfSpaces));
                 else
-                    files.push(new Files(hierarchy[i], files.peek().length + hierarchy[i].trim().length() + 1, noOfSpaces));
+                    filesStack.push(new Files(hierarchy[i], filesStack.peek().length + hierarchy[i].trim().length() + 1, noOfSpaces));
             }
             if (hierarchy[i].contains(".gif") || hierarchy[i].contains(".jpeg")) {
-                if(sum < files.peek().length - hierarchy[i].trim().length() - 1) {
-                    sum = files.peek().length - hierarchy[i].trim().length() - 1;
+                if(sum < filesStack.peek().length - hierarchy[i].trim().length() - 1) {
+                    sum = filesStack.peek().length - hierarchy[i].trim().length() - 1;
                 }
-                if(sum < files.peek().length - hierarchy[i].trim().length() - 1) {
-                    sum = files.peek().length - hierarchy[i].trim().length() - 1;
+                if(sum < filesStack.peek().length - hierarchy[i].trim().length() - 1) {
+                    sum = filesStack.peek().length - hierarchy[i].trim().length() - 1;
                 }
             }
         }
