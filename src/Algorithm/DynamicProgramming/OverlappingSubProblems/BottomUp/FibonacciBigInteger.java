@@ -1,4 +1,4 @@
-package Algorithm.DynamicProgramming;
+package Algorithm.DynamicProgramming.OverlappingSubProblems.BottomUp;
 
 import java.math.BigInteger;
 import java.util.Scanner;
@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Created by Nikhi on 9/25/2016.
  */
 
-public class Fibonaccimodified {
+public class FibonacciBigInteger {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         BigInteger t1 = new BigInteger(String.valueOf(sc.nextInt()));

@@ -1,4 +1,4 @@
-package Algorithm.DynamicProgramming;
+package Algorithm.DynamicProgramming.OverlappingSubProblems.TopDown;
 
 import java.util.Scanner;
 import java.util.Stack;

@@ -1,4 +1,4 @@
-package Algorithm.DynamicProgramming;
+package Algorithm.DynamicProgramming.OverlappingSubProblems.BottomUp;
 
 import java.util.Scanner;
 

@@ -5,7 +5,7 @@ package Algorithm.DynamicProgramming;
  * Search Probabilities of each node of BST is given.
  * Objective is to create a BST with minimum search probabilities.
  */
-public class OptimalBinarySearchTree {
+public class Dummy {
     public static void main(String[] args) {
 
     }

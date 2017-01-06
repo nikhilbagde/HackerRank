@@ -1,4 +1,4 @@
-package Algorithm.DynamicProgramming;
+package Algorithm.DynamicProgramming.OptimalSubStructure;
 
 import java.util.*;
 
@@ -82,10 +82,10 @@ public class FloydAllPairShortestPath {
         for (int mid = 1; mid < distance.length; mid++) {
             for (int start = 1; start < distance.length; start++) {
                 for (int end = 1; end < distance.length; end++) {
-                        if(start!= end && distance[start][mid] + distance[mid][end] < distance[start][end]){
-                            distance[start][end] = distance[start][mid] + distance[mid][end];
-                            path[start][end] = mid;
-                        }
+                    if(start!= end && distance[start][mid] + distance[mid][end] < distance[start][end]){
+                        distance[start][end] = distance[start][mid] + distance[mid][end];
+                        path[start][end] = mid;
+                    }
                 }
             }
             //printMatrix("After Floyd Algorithm\n Distances of All Pairs", distance);
