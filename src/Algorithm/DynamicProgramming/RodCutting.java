@@ -42,6 +42,7 @@ public class RodCutting {
             System.out.println();
             optimalProfit[length] = maximumProfit;
         }
+        System.out.print("Maximum Profit could obtained = ");
         System.out.println(optimalProfit[optimalProfit.length-1]);
     }
     private void logger(int length, int startOfLength, int endOfLength, int maximumProfit, int[] optimalProfit){

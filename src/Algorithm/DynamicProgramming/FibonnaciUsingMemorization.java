@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 /**
  * Created by Nikhil on 12/29/2016 12:07 AM.
+ * Step 1: Initialize memoized data structure.
+ * Step 2: Use recursion to solve subProblem and use above DS to reduce number of recursion calls.
  */
 public class FibonnaciUsingMemorization {
     private static int[] A;
