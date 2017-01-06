@@ -5,6 +5,22 @@ import java.util.Scanner;
 
 /**
  * Created by Nikhil on 1/5/2017 12:28 AM.
+ * Step 1: getInput() - provide length of rod and all profits of respective cuts.
+ * Step 2: To find max profit,
+ *          1. Create two arrays one for keeping track of optimal (maximum) profit for each cut
+ *              and another array say rodPieces( where we cut the rod)
+ *          2. For each length given,
+ *                  - initialize maxProfit to some negative value
+ *                  - Then consider all possible cuts from start index to that length.
+ *                  - check if what is max profit, (is it without cut or with some cut) ?
+ *                      - compare this profit with maxProfit currently we have for this length.
+ *                      - plus store value when we find maxProfit, to DS of RocPieces (here we got that cut)
+ *                   - store that maxProfit to DS of Optimal profit for that length to use it in future.
+ * Step 3: Print Path,
+ *          - Use RodPieces DS,
+ *             - Start with last value of DS and print it.
+ *             - Then decrease that length from given length of Rod. (If there was no Cut it will directly print length of Rod which was given)
+ *             - Keep doing this till this length value is not zero.
  */
 public class RodCutting {
     private int [] profit;
@@ -34,10 +50,10 @@ public class RodCutting {
 
         for (int length = 1; length <= maxLength ; length++) {
             int maximumProfit = Integer.MIN_VALUE;
-            for (int startOfLength = 0; startOfLength < length; startOfLength++) {
-                int endOfLength = length - startOfLength - 1;
-                maximumProfit = Math.max(maximumProfit , (profit[startOfLength] + optimalProfit[endOfLength]) );
-                logger(length,startOfLength, endOfLength, maximumProfit, optimalProfit);
+            for (int start = 0; start < length; start++) {
+                int end = length - start - 1;
+                maximumProfit = Math.max(maximumProfit , (profit[start] + optimalProfit[end]) );
+                logger(length,start, end, maximumProfit, optimalProfit);
             }
             System.out.println();
             optimalProfit[length] = maximumProfit;
