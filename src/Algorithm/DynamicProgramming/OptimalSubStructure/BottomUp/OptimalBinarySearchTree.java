@@ -1,4 +1,4 @@
-package Algorithm.DynamicProgramming.OptimalSubStructure;
+package Algorithm.DynamicProgramming.OptimalSubStructure.BottomUp;
 
 /**
  * Created by Nikhil on 12/28/2016 10:32 PM.

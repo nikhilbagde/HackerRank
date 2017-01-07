@@ -43,7 +43,11 @@ public class RodCutting {
             profit[length] = scanner.nextInt();
         }
     }
-
+    /*
+    MaxProfit(n) = (profit 0 + profit n) or (profit 1 + profit n-1) or (profit of 2 + profit n-2)..
+                       ... or (profit n-1 + profit 1).
+                        maximum of all above. and current maximum considered.
+     */
     private void findMaximumProfit(){
         int[] optimalProfit = new int[profit.length];
         optimalProfit[0] = 0;

@@ -1,4 +1,4 @@
-package Algorithm.DynamicProgramming.OptimalSubStructure;
+package Algorithm.DynamicProgramming.OptimalSubStructure.BottomUp;
 
 import java.util.*;
 
