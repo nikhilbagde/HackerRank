@@ -1,6 +1,6 @@
-package Java.Random3;
+package GeeksForGeeks.Java.Random3;
 
-import Java.Random2.ScoreTest;
+import GeeksForGeeks.Java.Random2.ScoreTest;
 /**
  * Created by Nikhil on 1/7/2017 2:22 AM.
  */

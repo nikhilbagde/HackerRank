@@ -1,8 +1,6 @@
-package Java.Random3.ArraysInJava;
+package GeeksForGeeks.Java.Random3.ArraysInJava;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 
 /**

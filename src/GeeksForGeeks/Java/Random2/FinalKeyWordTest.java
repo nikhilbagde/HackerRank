@@ -1,4 +1,4 @@
-package Java.Random2;
+package GeeksForGeeks.Java.Random2;
 
 /**
  * Created by Nikhil on 1/7/2017 2:59 AM.
