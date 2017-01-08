@@ -110,7 +110,7 @@ The sum of an hourglass is the sum of all the numbers within it. The sum for the
 
 In this problem, you have to print the largest sum among all the hourglasses in the array.
 
-Note: If you have already solved the problem "Java 2D array" in the data structures chapter of the Java domain, you may skip this challenge.
+Note: If you have already solved the problem "JavaReview 2D array" in the data structures chapter of the JavaReview domain, you may skip this challenge.
 
 Input Format
 

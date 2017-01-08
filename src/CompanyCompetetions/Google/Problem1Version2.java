@@ -9,7 +9,7 @@ public class Problem1Version2 {
         solution(x);
     }
     public static int solution(int X) {
-        // write your code in Java SE 8
+        // write your code in JavaReview SE 8
         int max = 0;
         String inputNumber = String.valueOf(X);
         for(int index=0;index<inputNumber.length()-1;index++){

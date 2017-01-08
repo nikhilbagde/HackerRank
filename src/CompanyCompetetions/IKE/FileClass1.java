@@ -8,8 +8,8 @@ import java.io.File;
 public class FileClass1 {
     //public class  FileClass{
         public static void main(String[] args){
-            File file = new File("C:\\Users\\Nikhi\\Google Drive\\IdeaProjects\\HackerRank\\src\\Java\\RandomTest\\test.txt");
-            File backup = new File("C:\\Users\\Nikhi\\Google Drive\\IdeaProjects\\HackerRank\\src\\Java\\RandomTest\\test.txt.bak");
+            File file = new File("C:\\Users\\Nikhi\\Google Drive\\IdeaProjects\\HackerRank\\src\\JavaReview\\RandomTest\\test.txt");
+            File backup = new File("C:\\Users\\Nikhi\\Google Drive\\IdeaProjects\\HackerRank\\src\\JavaReview\\RandomTest\\test.txt.bak");
             backup.delete();
             file.renameTo(backup); //Location 1
         }

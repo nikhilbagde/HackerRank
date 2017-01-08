@@ -67,5 +67,5 @@ Time Limit: 3.0 sec(s) for each input file.
 Memory Limit: 512 MB
 Source Limit: 1024 KB
 Marking Scheme: Marks are awarded if any testcase passes.
-Allowed languages: Java, Java 8
+Allowed languages: JavaReview, JavaReview 8
  */

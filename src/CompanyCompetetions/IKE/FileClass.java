@@ -34,7 +34,7 @@ public class FileClass {
 Question 17:
 Adjust Text Size:
 
-There is a requirement to get employee details from the database, save the details into a Microsoft Excel file and then download it. Which of the following Java code blocks will fulfill this requirement using high cohesion (assume here that methods contain the required code)?
+There is a requirement to get employee details from the database, save the details into a Microsoft Excel file and then download it. Which of the following JavaReview code blocks will fulfill this requirement using high cohesion (assume here that methods contain the required code)?
 	A.	class Employee {
             public void connectToDatabase(){}
             public void getEmployeeDetails(){}

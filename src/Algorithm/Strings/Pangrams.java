@@ -100,6 +100,6 @@ Set
 More
 Current Buffer (saved locally, editable)
 
-Java 8
+JavaReview 8
 
  */

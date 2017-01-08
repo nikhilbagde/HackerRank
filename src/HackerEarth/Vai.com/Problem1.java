@@ -76,10 +76,7 @@ public class Problem1 {
         }
     }
     public static boolean isPallindrom(String time){
-        if(time.charAt(0) == time.charAt(3) && time.charAt(1)== time.charAt(2)){
-            return true;
-        }
-        return false;
+        return time.charAt(0) == time.charAt(3) && time.charAt(1) == time.charAt(2);
     }
 }
 
@@ -119,5 +116,5 @@ Time Limit: 1.0 sec(s) for each input file.
 Memory Limit: 256 MB
 Source Limit: 1024 KB
 Marking Scheme: Marks are awarded if any testcase passes.
-Allowed languages: Java, Java 8
+Allowed languages: JavaReview, JavaReview 8
  */

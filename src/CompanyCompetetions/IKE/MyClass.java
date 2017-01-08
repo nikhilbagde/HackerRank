@@ -20,10 +20,10 @@ public class MyClass {
 }
 
 /*
-A Java SE application com.ikmnet.MyJavaApp is to be deployed as an executable jar file. Which of the following are steps that can be part of the process for successfully creating this jar file?
+A JavaReview SE application com.ikmnet.MyJavaApp is to be deployed as an executable jar file. Which of the following are steps that can be part of the process for successfully creating this jar file?
 	A.	Add to the manifest:
 Main-Class: com.ikmnet.MyJavaApp
-	B.	Compile the Java code to produce an EXE file instead of bytecode.
+	B.	Compile the JavaReview code to produce an EXE file instead of bytecode.
 	C.	Ensure that MyJavaApp does not include a main method.
 	D.	Build the JAR file using the command:
 jar –executable com\ikmnet\MyJavaApp.java
@@ -35,7 +35,7 @@ jar –executable com\ikmnet\MyJavaApp.java
 Question 11:
 Adjust Text Size:
 
-Which of the following correctly describe deadlock in Java and its prevention?
+Which of the following correctly describe deadlock in JavaReview and its prevention?
 	A.	The lock timeout can be used to fix deadlock.
 	B.	A deadlock is when more than one threads are waiting for each other to release lock forever.
 	C.	To prevent deadlock, never use multiple threads in one class.
