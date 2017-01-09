@@ -20,6 +20,5 @@ public class StaticShadowing {
         C cd = new D();
         C.function1();
         D.function1();
-
     }
 }

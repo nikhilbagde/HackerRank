@@ -11,6 +11,7 @@ class G{
     public void fun2(){
         System.out.println("In G fun2");
     }
+
     class H extends G{
         public void fun1(){
             System.out.println("In H fun1");
@@ -19,6 +20,11 @@ class G{
         public void fun2(){
             System.out.println("In H fun2");
         }
+    }
+
+    public static void main(String[] args) {
+        G gh = new G().new H();
+        gh.fun1();
     }
 }
 /*
