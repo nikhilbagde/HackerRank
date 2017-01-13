@@ -22,7 +22,7 @@ public class BinaryTree {
         return root;
     }
 
-    public void insert(int data){
+    public  void insert(int data){
         if(root == null){
             root = new Node(data);
         }else {
