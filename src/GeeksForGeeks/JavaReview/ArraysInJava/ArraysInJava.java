@@ -135,7 +135,7 @@ public class ArraysInJava {
         int[] array13 = {1,2,33,4};
         int [] copyOfArray13 = Arrays.copyOf(array13, array13.length);
         int [] copyOfArray1 = Arrays.copyOf(array13, 10);
-
+        //System.arraycopy();
 
         //binary Search in array
         int[] array14 = {1,2,3,4,5,6,7,8,9,10};

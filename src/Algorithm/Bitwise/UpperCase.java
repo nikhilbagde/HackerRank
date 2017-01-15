@@ -2,7 +2,7 @@ package Algorithm.Bitwise;
 
 /**
  * Created by Nikhi on 10/19/2016.
- * ASCI team did one awesome job, all small letter from a to z have their 6th but as 0
+ * ASCI team did one awesome job, all small letter from a to z have their 6th bit as 0
  * and all upper letter A to Z have their 6th digit as 1. keeping all other bits same.
  * So to convert lower case to upper case, we just have to change its 6th bit.
  *

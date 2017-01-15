@@ -10,9 +10,27 @@ public class Question1 {
         }
         int checker = 0;
         for (int i = 0; i < str.length(); i++) {
+            int val = str.charAt(i) - 'a';
+            val = 1 << val;
+            if ((checker & (val)) > 0) return false;
+            checker |= (val);
+        }
+        return true;
+    }
+    public static boolean isUniqueCharsExplained(String str) {
+        if (str.length() > 128) {
+            return false;
+        }
+        int checker = 0;
+        for (int i = 0; i < str.length(); i++) {
             int val = str.charAt(i) - 'a'; // Difference with a =  97
-            if ((checker & (1 << val)) > 0) return false;
-            checker |= (1 << val); //Its like addition 0011 (3) + 0100 (4) = 0111 (7)
+            val = 1 << val;             //SET THE BIT FOR Ith CHARACTER
+            System.out.println("Checker = " + Integer.toBinaryString(checker) + " Val = " + Integer.toBinaryString(val));
+            if ((checker & (val)) > 0) return false;        //CHECK IF ITS ALREDY BEEN SET BY ADDING > 0
+            System.out.println("Checker & Val = "  + Integer.toBinaryString(checker & val));
+            checker |= (val); //Its like addition 0011 (3) + 0100 (4) = 0111 (7)    //STORE THAT CHARACTER AS SET INTO CHECKER.
+            System.out.println("Checker | val = " + Integer.toBinaryString(checker | val));
+            System.out.println("Checker = " + Integer.toBinaryString(checker));
         }
         return true;
     }
@@ -30,8 +48,9 @@ public class Question1 {
         return true;
     }
 
+
     public static void main(String[] args) {
-        String[] words = {"abcde", "hello", "apple", "kite", "padle"};
+        String[] words = {"abcde", "hello", "apple", "kite", "padle", "zz"};
         for (String word : words) {
             System.out.println(word + ": " + isUniqueChars(word) + " " + isUniqueChars2(word));
         }
