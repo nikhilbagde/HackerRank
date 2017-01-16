@@ -48,11 +48,33 @@ public class Question1 {
         return true;
     }
 
+    public static boolean isUniqueDigits(String str) {
+        if (str.length() > 10) {
+            return false;
+        }
+        int checker = 0;
+        for (int i = 0; i < str.length(); i++) {
+            int val = str.charAt(i) - '0';
+            val = 1 << val;
+            if ((checker & (val)) > 0) {
+                return false;
+            }
+            checker |= (val);
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         String[] words = {"abcde", "hello", "apple", "kite", "padle", "zz"};
         for (String word : words) {
             System.out.println(word + ": " + isUniqueChars(word) + " " + isUniqueChars2(word));
         }
+
+        String[] Numbers = {"012345", "54321", "1232", "99", "901", "98765"};
+        for (String num : Numbers) {
+            System.out.println(num + ": " + isUniqueDigits(num) + " " + isUniqueDigits(num));
+        }
+
+
     }
 }

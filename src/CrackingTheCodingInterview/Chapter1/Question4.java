@@ -6,7 +6,7 @@ package CrackingTheCodingInterview.Chapter1;
 public class Question4 {
     public static void main(String[] args) {
         String str = "abc d e f";
-        replaceSpace(str.toCharArray(), str.length());
+        //replaceSpace(str.toCharArray(), str.length());
         String str1 = str.replaceAll("\\s+","%20");
         String str2 = str.replaceAll("\\s", "a");
 
@@ -21,6 +21,19 @@ public class Question4 {
                 spaceCount++;
             }
         }
-        int totalLength =  length + spaceCount *2 + 1;
+        int newLength =  length + spaceCount *2 + 1;
+
+        arr[newLength]  ='\0';
+        for (int i = arr.length - 1 ; i > 0; i--) {
+            if(arr[i] == ' '){
+                arr[newLength-1] = '0';
+                arr[newLength-2] = '2';
+                arr[newLength-3] = '%';
+                newLength -=3;
+            }else{
+                arr[newLength - 1] = arr[i];
+                newLength -=1;
+            }
+        }
     }
 }

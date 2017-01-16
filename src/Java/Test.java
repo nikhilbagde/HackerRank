@@ -49,8 +49,9 @@ public class Test {
     }
     private static void permuationRec(String pre, String a){
         int n = a.length();
-        if(n == 0) System.out.println(pre);
-        else{
+        if(n == 0){
+            System.out.println(pre);
+        }else{
             for (int i = 0; i < a.length(); i++) {
                 permuationRec(pre + a.charAt(i), a.substring(0,i) + a.substring(i+1));
             }
